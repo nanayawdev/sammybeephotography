@@ -1,75 +1,89 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
+import { useState } from "react"
+import Lightbox from "yet-another-react-lightbox"
+import "yet-another-react-lightbox/styles.css"
 
 const GALLERY_ITEMS = [
   {
     image: "/gallery/sammybbee.jpeg",
     category: "Portrait",
-    href: "/gallery/portrait"
+    orientation: "portrait",
+    size: "normal"
   },
   {
     image: "/gallery/sammybbee.jpeg",
-    category: "Fashion",
-    href: "/gallery/fashion"
-  },
-  {
-    image: "/gallery/sammybbee.jpeg",
-    category: "Portrait",
-    href: "/gallery/portrait"
-  },
-  {
-    image: "/gallery/sammybbee.jpeg",
-    category: "Fashion",
-    href: "/gallery/fashion"
+    category: "Wedding",
+    orientation: "landscape",
+    size: "wide"
   },
   {
     image: "/gallery/sammybbee.jpeg",
     category: "Portrait",
-    href: "/gallery/portrait"
+    orientation: "portrait",
+    size: "tall"
+  },
+  {
+    image: "/gallery/sammybbee.jpeg",
+    category: "Fashion",
+    orientation: "landscape",
+    size: "normal"
+  },
+  {
+    image: "/gallery/sammybbee.jpeg",
+    category: "Portrait",
+    orientation: "portrait",
+    size: "normal"
   },
   {
     image: "/gallery/sammybbee.jpeg",
     category: "Abstract",
-    href: "/gallery/abstract"
+    orientation: "landscape",
+    size: "wide"
   },
   {
     image: "/gallery/sammybbee.jpeg",
     category: "Portrait",
-    href: "/gallery/portrait"
+    orientation: "portrait",
+    size: "tall"
   },
   {
     image: "/gallery/sammybbee.jpeg",
     category: "Fashion",
-    href: "/gallery/fashion"
+    orientation: "landscape",
+    size: "normal"
   },
   {
     image: "/gallery/sammybbee.jpeg",
     category: "Abstract",
-    href: "/gallery/abstract"
+    orientation: "portrait",
+    size: "normal"
   },
   {
     image: "/gallery/sammybbee.jpeg",
     category: "Portrait",
-    href: "/gallery/portrait"
+    orientation: "landscape",
+    size: "wide"
   },
   {
     image: "/gallery/sammybbee.jpeg",
     category: "Fashion",
-    href: "/gallery/fashion"
+    orientation: "portrait",
+    size: "tall"
   },
   {
     image: "/gallery/sammybbee.jpeg",
     category: "Portrait",
-    href: "/gallery/portrait"
-  },
-  
-  
+    orientation: "landscape",
+    size: "normal"
+  }
 ]
 
 export default function GalleryGrid() {
+  const [currentImage, setCurrentImage] = useState(-1)
+
   return (
     <section className="relative bg-white py-24">
       <div className="max-w-[1920px] mx-auto px-4 md:px-8">
@@ -80,57 +94,66 @@ export default function GalleryGrid() {
               Our Latest Work
             </h2>
             <p className="text-gray-600 max-w-2xl">
-              Explore our diverse portfolio of stunning photography, capturing life's beautiful moments with artistic precision.
+              Explore our diverse portfolio of stunning photography, capturing life&apos;s beautiful moments with artistic precision.
             </p>
           </div>
-          <Link 
-            href="/gallery"
+          <button 
+            onClick={() => setCurrentImage(0)}
             className="hidden md:inline-flex items-center text-orange-500 hover:text-orange-600 font-medium"
           >
             View All Work
             <ArrowUpRight className="ml-2 w-5 h-5" />
-          </Link>
+          </button>
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[200px] md:auto-rows-[300px]">
           {GALLERY_ITEMS.map((item, index) => (
-            <Link
-              key={item.image}
-              href={item.href}
-              className={`group relative overflow-hidden ${
-                index === 2 || index === 5 || index === 7 ? 'row-span-2' : ''
-              }`}
+            <div
+              key={index}
+              onClick={() => setCurrentImage(index)}
+              className={`group relative cursor-pointer overflow-hidden
+                ${item.orientation === 'landscape' && item.size === 'wide' ? 'col-span-2' : ''}
+                ${item.orientation === 'portrait' && item.size === 'tall' ? 'row-span-2' : ''}
+              `}
             >
-              <div className="relative aspect-[3/4] w-full h-full">
-                <Image
-                  src={item.image}
-                  alt={item.category}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    <p className="text-white text-sm font-medium mb-2">{item.category}</p>
-                    <div className="w-8 h-px bg-orange-500 mx-auto" />
-                  </div>
+              <Image
+                src={item.image}
+                alt={item.category}
+                fill
+                className={`object-cover transition-transform duration-700 group-hover:scale-110
+                  ${item.orientation === 'landscape' ? 'object-[center_30%]' : 'object-[center_center]'}
+                `}
+              />
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div className="text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                  <p className="text-white text-sm font-medium mb-2">{item.category}</p>
+                  <div className="w-8 h-px bg-orange-500 mx-auto" />
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
 
         {/* Mobile View All Button */}
         <div className="mt-8 text-center md:hidden">
-          <Link 
-            href="/gallery"
+          <button 
+            onClick={() => setCurrentImage(0)}
             className="inline-flex items-center text-orange-500 hover:text-orange-600 font-medium"
           >
             View All Work
             <ArrowUpRight className="ml-2 w-5 h-5" />
-          </Link>
+          </button>
         </div>
+
+        {/* Lightbox */}
+        <Lightbox
+          open={currentImage >= 0}
+          index={currentImage}
+          close={() => setCurrentImage(-1)}
+          slides={GALLERY_ITEMS.map(item => ({ src: item.image }))}
+        />
       </div>
     </section>
   )
