@@ -1,9 +1,9 @@
 import HeroSection from "@/components/hero-section"
 import AboutSection from "@/components/about-section"
 import StoriesSection from "@/components/stories-section"
+import GalleryGrid from "@/components/gallery-grid"
 import StatsSection from "@/components/stats-section"
 import BookUsSection from "@/components/book-us-section"
-import InquirySection from "@/components/inquiry-section"
 
 export default function Home() {
   return (
@@ -11,9 +11,9 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <StoriesSection />
+      <GalleryGrid />
       <StatsSection />
       <BookUsSection />
-      <InquirySection />
     </main>
   )
 }
