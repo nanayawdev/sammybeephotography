@@ -2,20 +2,21 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
+import Navigation from "@/components/navigation"
 
 const HERO_SLIDES = [
   {
-    image: "/hero-image.jpg",
+    image: "/studio-image.jpeg",
     title: "CREATIVITY AT IT'S FINEST",
     subtitle: "INVEST IN YOUR MEMORIES."
   },
   {
-    image: "/hero-image2.jpg",
+    image: "/studio-image2.jpeg",
     title: "CAPTURING TIMELESS MOMENTS",
     subtitle: "EVERY DETAIL MATTERS."
   },
   {
-    image: "/hero-image3.jpg",
+    image: "/studio-image3.jpeg",
     title: "PROFESSIONAL EXCELLENCE",
     subtitle: "CREATING LASTING IMPRESSIONS."
   }
@@ -33,13 +34,17 @@ export default function RateCardPage() {
         setIsChanging(false)
       }, 300)
     }, 3000)
+
     return () => clearInterval(timer)
   }, [])
 
   return (
     <main className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative h-screen bg-black">
+      {/* Hero Section - Reduced height */}
+      <section className="relative h-[60vh] min-h-[500px] max-h-[600px] bg-black">
+        {/* Add Navigation */}
+        <Navigation />
+
         {/* Background Image with smooth transition */}
         <Image
           src={HERO_SLIDES[activeSlide].image}
@@ -54,13 +59,13 @@ export default function RateCardPage() {
         {/* Gradient Overlay */}
         <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
 
-        {/* Content */}
-        <div className="relative h-full max-w-7xl mx-auto px-8 flex flex-col justify-end pb-24">
+        {/* Content - Adjusted padding */}
+        <div className="relative h-full max-w-7xl mx-auto px-8 flex flex-col justify-end pb-16">
           <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
               {HERO_SLIDES[activeSlide].title}
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8">
+            <p className="text-lg md:text-xl text-gray-300 mb-6">
               {HERO_SLIDES[activeSlide].subtitle}
             </p>
             <button className="bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-lg hover:bg-white/20 transition-colors">
@@ -69,7 +74,7 @@ export default function RateCardPage() {
           </div>
 
           {/* Slide Counter */}
-          <div className="absolute bottom-8 right-8 text-white/70">
+          <div className="absolute bottom-6 right-8 text-white/70">
             <span className="text-2xl font-medium">0{activeSlide + 1}</span>
             <span className="mx-2">/</span>
             <span>0{HERO_SLIDES.length}</span>

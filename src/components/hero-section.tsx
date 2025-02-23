@@ -9,17 +9,17 @@ import Navigation from "./navigation"
 const CAROUSEL_ITEMS = [
   {
     image:
-      "/hero-image.jpg",
+      "/studio-image2.jpeg",
     title: "SAMMYBBEE\nPHOTOGRAPHY",
     hasGradient: true
   },
   {
-    image: "/hero-image2.jpg",
+    image: "/studio-image.jpeg",
     title: "CAPTURE THE\nMOMENTS",
     hasGradient: false
   },
   {
-    image: "/hero-image3.jpg",
+    image: "/studio-image4.jpeg",
     title: "CREATING\nLASTING MEMORIES",
     hasGradient: false
   },

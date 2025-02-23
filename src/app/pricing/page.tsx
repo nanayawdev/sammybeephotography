@@ -1,3 +1,5 @@
+import Navigation from "@/components/navigation"
+
 export default function PricingPage() {
   const packages = [
     {
@@ -42,8 +44,9 @@ export default function PricingPage() {
   ]
 
   return (
-    <main className="min-h-screen pt-24 bg-white">
-      <div className="max-w-7xl mx-auto px-8 py-24">
+    <main className="min-h-screen bg-white">
+      <Navigation />
+      <div className="max-w-7xl mx-auto px-8 py-24 pt-32">
         <h1 className="text-5xl md:text-6xl font-bold mb-12">Investment</h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {packages.map((pkg) => (
