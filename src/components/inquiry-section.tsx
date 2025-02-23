@@ -13,13 +13,14 @@ const SERVICE_OPTIONS = [
 
 export default function InquirySection() {
   const [agreed, setAgreed] = useState(false)
+  const [selectedService, setSelectedService] = useState("")
 
   return (
     <section className="relative grid grid-cols-1 lg:grid-cols-2">
       {/* Left Image */}
       <div className="relative h-[300px] lg:h-auto">
         <img
-          src="/contact-image.jpg"
+          src="/studio-image.jpeg"
           alt="Photography contact"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -69,6 +70,8 @@ export default function InquirySection() {
 
             <div>
               <select
+                value={selectedService}
+                onChange={(e) => setSelectedService(e.target.value)}
                 className="w-full bg-transparent border-b border-white/20 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors"
                 required
               >

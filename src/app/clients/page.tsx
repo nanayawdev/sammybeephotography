@@ -1,3 +1,5 @@
+import Navigation from "@/components/navigation"
+
 export default function ClientsPage() {
   const testimonials = [
     {
@@ -21,8 +23,9 @@ export default function ClientsPage() {
   ]
 
   return (
-    <main className="min-h-screen pt-24 bg-white">
-      <div className="max-w-7xl mx-auto px-8 py-24">
+    <main className="min-h-screen bg-white">
+      <Navigation />
+      <div className="max-w-7xl mx-auto px-8 py-24 pt-32">
         <h1 className="text-5xl md:text-6xl font-bold mb-12">Our Happy Clients</h1>
         
         {/* Client Testimonials */}
@@ -43,7 +46,7 @@ export default function ClientsPage() {
 
         {/* Client Logos Section */}
         <div className="mt-24">
-          <h2 className="text-3xl font-bold mb-8">Companies We've Worked With</h2>
+          <h2 className="text-3xl font-bold mb-8">Companies We&apos;ve Worked With</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[1, 2, 3, 4].map((i) => (
               <div key={i} className="aspect-[3/2] bg-gray-100 rounded-lg flex items-center justify-center">
