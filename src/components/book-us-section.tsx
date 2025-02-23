@@ -29,7 +29,7 @@ export default function BookUsSection() {
 
           {/* CTA Button */}
           <button 
-            className="group inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-4 text-lg font-medium 
+            className="group inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white rounded-xl px-8 py-4 text-lg font-medium 
               transition-all duration-300 
               hover:shadow-lg hover:shadow-orange-500/20"
           >
