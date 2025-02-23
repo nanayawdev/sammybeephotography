@@ -13,57 +13,57 @@ const GALLERY_ITEMS = [
     href: "/gallery/portrait"
   },
   {
-    image: "/gallery/sammybbee.jpeg",
+    image: "/gallery/sammybbee1.jpeg",
     category: "Fashion",
     href: "/gallery/fashion"
   },
   {
-    image: "/gallery/sammybbee.jpeg",
+    image: "/gallery/sammybbee2.jpeg",
     category: "Portrait",
     href: "/gallery/portrait"
   },
   {
-    image: "/gallery/sammybbee.jpeg",
+    image: "/gallery/sammybbee3.jpeg",
     category: "Fashion",
     href: "/gallery/fashion"
   },
   {
-    image: "/gallery/sammybbee.jpeg",
+    image: "/gallery/sammybbee4.jpeg",
     category: "Portrait",
     href: "/gallery/portrait"
   },
   {
-    image: "/gallery/sammybbee.jpeg",
+    image: "/gallery/sammybbee5.jpeg",
     category: "Abstract",
     href: "/gallery/abstract"
   },
   {
-    image: "/gallery/sammybbee.jpeg",
+    image: "/gallery/sammybbee6.jpeg",
     category: "Portrait",
     href: "/gallery/portrait"
   },
   {
-    image: "/gallery/sammybbee.jpeg",
+    image: "/gallery/sammybbee7.jpeg",
     category: "Fashion",
     href: "/gallery/fashion"
   },
   {
-    image: "/gallery/sammybbee.jpeg",
+    image: "/gallery/sammybbee8.jpeg",
     category: "Abstract",
     href: "/gallery/abstract"
   },
   {
-    image: "/gallery/sammybbee.jpeg",
+    image: "/gallery/sammybbee9.jpeg",
     category: "Portrait",
     href: "/gallery/portrait"
   },
   {
-    image: "/gallery/sammybbee.jpeg",
+    image: "/gallery/sammybbee12.jpeg",
     category: "Fashion",
     href: "/gallery/fashion"
   },
   {
-    image: "/gallery/sammybbee.jpeg",
+    image: "/gallery/sammybbee11.jpeg",
     category: "Portrait",
     href: "/gallery/portrait"
   }
