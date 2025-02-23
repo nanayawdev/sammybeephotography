@@ -5,22 +5,22 @@ import Image from "next/image"
 
 const STORY_ITEMS = [
   {
-    title: "Portrait",
+    title: "Adu Gyamfi and Ama",
     image: "/stories/portrait.jpeg",
     href: "/gallery/portrait"
   },
   {
-    title: "Wedding",
+    title: "Sammy and Belinda",
     image: "/stories/wedding.jpeg",
     href: "/gallery/wedding"
   },
   {
-    title: "Events",
+    title: "Benjamin and Tina",
     image: "/stories/bride-smiling.jpeg",
     href: "/gallery/events"
   },
   {
-    title: "Commercial",
+    title: "Fabrice and Fidelia",
     image: "/stories/bride.jpeg",
     href: "/gallery/commercial"
   }
