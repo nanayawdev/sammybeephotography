@@ -19,12 +19,12 @@ export default function BookUsSection() {
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           {/* Main Content */}
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-medium text-white mb-6">
-            Let's Create Your Story Together
+            Let&apos;s Create Your Story Together
           </h2>
           
           <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl">
-            Every moment is unique, and we're here to capture yours. Whether it's your wedding day, 
-            a special celebration, or professional portraits, we'll help you preserve these precious memories forever.
+            Every moment is unique, and we&apos;re here to capture yours. Whether it&apos;s your wedding day, 
+            a special celebration, or professional portraits, we&apos;ll help you preserve these precious memories forever.
           </p>
 
           {/* CTA Button */}
