@@ -6,55 +6,67 @@ import { ArrowUpRight } from "lucide-react"
 
 const GALLERY_ITEMS = [
   {
-    image: "/gallery/portrait1.jpg",
+    image: "/gallery/sammybbee.jpeg",
     category: "Portrait",
     href: "/gallery/portrait"
   },
   {
-    image: "/gallery/fashion1.jpg",
+    image: "/gallery/sammybbee.jpeg",
     category: "Fashion",
     href: "/gallery/fashion"
   },
   {
-    image: "/gallery/portrait2.jpg",
+    image: "/gallery/sammybbee.jpeg",
     category: "Portrait",
     href: "/gallery/portrait"
   },
   {
-    image: "/gallery/fashion2.jpg",
+    image: "/gallery/sammybbee.jpeg",
     category: "Fashion",
     href: "/gallery/fashion"
   },
   {
-    image: "/gallery/portrait3.jpg",
+    image: "/gallery/sammybbee.jpeg",
     category: "Portrait",
     href: "/gallery/portrait"
   },
   {
-    image: "/gallery/abstract1.jpg",
+    image: "/gallery/sammybbee.jpeg",
     category: "Abstract",
     href: "/gallery/abstract"
   },
   {
-    image: "/gallery/portrait4.jpg",
+    image: "/gallery/sammybbee.jpeg",
     category: "Portrait",
     href: "/gallery/portrait"
   },
   {
-    image: "/gallery/fashion3.jpg",
+    image: "/gallery/sammybbee.jpeg",
     category: "Fashion",
     href: "/gallery/fashion"
   },
   {
-    image: "/gallery/abstract2.jpg",
+    image: "/gallery/sammybbee.jpeg",
     category: "Abstract",
     href: "/gallery/abstract"
   },
   {
-    image: "/gallery/portrait5.jpg",
+    image: "/gallery/sammybbee.jpeg",
     category: "Portrait",
     href: "/gallery/portrait"
-  }
+  },
+  {
+    image: "/gallery/sammybbee.jpeg",
+    category: "Fashion",
+    href: "/gallery/fashion"
+  },
+  {
+    image: "/gallery/sammybbee.jpeg",
+    category: "Portrait",
+    href: "/gallery/portrait"
+  },
+  
+  
 ]
 
 export default function GalleryGrid() {
