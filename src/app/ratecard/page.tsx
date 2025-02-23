@@ -32,63 +32,9 @@ export default function RateCardPage() {
         setActiveSlide((current) => (current + 1) % HERO_SLIDES.length)
         setIsChanging(false)
       }, 300)
-    }, 5000)
+    }, 3000)
     return () => clearInterval(timer)
   }, [])
-
-  const rates = [
-    {
-      category: "Wedding Photography",
-      packages: [
-        {
-          name: "Half Day",
-          price: "799",
-          duration: "4 hours",
-          deliverables: "150+ edited photos"
-        },
-        {
-          name: "Full Day",
-          price: "1499",
-          duration: "8 hours",
-          deliverables: "300+ edited photos"
-        }
-      ]
-    },
-    {
-      category: "Portrait Sessions",
-      packages: [
-        {
-          name: "Basic",
-          price: "299",
-          duration: "1 hour",
-          deliverables: "20 edited photos"
-        },
-        {
-          name: "Premium",
-          price: "499",
-          duration: "2 hours",
-          deliverables: "40 edited photos"
-        }
-      ]
-    },
-    {
-      category: "Event Coverage",
-      packages: [
-        {
-          name: "Standard",
-          price: "599",
-          duration: "3 hours",
-          deliverables: "100+ edited photos"
-        },
-        {
-          name: "Extended",
-          price: "999",
-          duration: "6 hours",
-          deliverables: "200+ edited photos"
-        }
-      ]
-    }
-  ]
 
   return (
     <main className="min-h-screen bg-white">
@@ -131,30 +77,123 @@ export default function RateCardPage() {
         </div>
       </section>
 
-      {/* Rates Section */}
+      {/* Packages Section */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-8">
-          <div className="space-y-16">
-            {rates.map((category) => (
-              <div key={category.category}>
-                <h2 className="text-3xl font-bold mb-8">{category.category}</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {category.packages.map((pkg) => (
-                    <div key={pkg.name} className="bg-gray-50 p-8 rounded-xl">
-                      <h3 className="text-2xl font-bold mb-2">{pkg.name}</h3>
-                      <p className="text-4xl font-bold text-orange-500 mb-6">${pkg.price}</p>
-                      <div className="space-y-2 text-gray-600">
-                        <p>Duration: {pkg.duration}</p>
-                        <p>Includes: {pkg.deliverables}</p>
-                      </div>
-                      <button className="w-full mt-8 bg-black text-white py-3 rounded-lg hover:bg-gray-900 transition-colors">
-                        Book Now
-                      </button>
-                    </div>
-                  ))}
+          {/* Wedding Packages */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              PRE AND POST WEDDING PHOTOGRAPHY PACKAGES
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
+            {/* Pre-Wedding Package */}
+            <div className="space-y-8">
+              <Image
+                src="/gallery/sammybbee1.jpeg"
+                alt="Pre-wedding photography"
+                width={600}
+                height={400}
+                className="w-full aspect-[4/3] object-cover"
+              />
+              <div className="text-center">
+                <h3 className="text-2xl font-bold mb-4">PRE-WEDDING SESSION</h3>
+                <p className="text-gray-600 mb-6">
+                  Looking to create beautiful images in anticipation of your big day? This Package is your best bet!
+                </p>
+                <div className="space-y-2 text-gray-700">
+                  <p>2 hours + 2 looks</p>
+                  <p>30 images, 10 retouched images</p>
+                  <p>1 Photographer + 1 Creative Director</p>
+                  <p>A 30-minute consultation with the creative team.</p>
+                </div>
+                <p className="text-2xl font-bold mt-6">$ 3000.00</p>
+              </div>
+            </div>
+
+            {/* Post-Wedding Package */}
+            <div className="space-y-8">
+              <Image
+                src="/gallery/sammybbee2.jpeg"
+                alt="Post-wedding photography"
+                width={600}
+                height={400}
+                className="w-full aspect-[4/3] object-cover"
+              />
+              <div className="text-center">
+                <h3 className="text-2xl font-bold mb-4">POST-WEDDING SESSION</h3>
+                <p className="text-gray-600 mb-6">
+                  This package is tailored to meet the needs of both newlyweds and other married couples.
+                </p>
+                <div className="space-y-2 text-gray-700">
+                  <p>2 hours + 2 looks</p>
+                  <p>40 images, 15 Retouched images</p>
+                  <p>1 Photographer + 1 Creative Director</p>
+                  <p>Complimentary Hair & Makeup</p>
+                  <p>1-hour consultation with the creative team.</p>
+                </div>
+                <p className="text-2xl font-bold mt-6">$ 4500.00</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Additional Categories */}
+          <div className="space-y-24">
+            {/* Engagement Sessions */}
+            <div>
+              <h3 className="text-2xl font-bold mb-8 text-center">ENGAGEMENT SESSIONS</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="bg-gray-50 p-8 rounded-xl text-center">
+                  <h4 className="text-xl font-bold mb-4">Classic Session</h4>
+                  <p className="text-4xl font-bold text-orange-500 mb-6">$1500</p>
+                  <div className="space-y-2 text-gray-600">
+                    <p>1.5 hours coverage</p>
+                    <p>25 edited photos</p>
+                    <p>1 location</p>
+                    <p>Online gallery</p>
+                  </div>
+                </div>
+                <div className="bg-gray-50 p-8 rounded-xl text-center">
+                  <h4 className="text-xl font-bold mb-4">Premium Session</h4>
+                  <p className="text-4xl font-bold text-orange-500 mb-6">$2500</p>
+                  <div className="space-y-2 text-gray-600">
+                    <p>3 hours coverage</p>
+                    <p>50 edited photos</p>
+                    <p>2 locations</p>
+                    <p>Online gallery</p>
+                    <p>Complimentary styling</p>
+                  </div>
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* Portrait Sessions */}
+            <div>
+              <h3 className="text-2xl font-bold mb-8 text-center">PORTRAIT SESSIONS</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="bg-gray-50 p-8 rounded-xl text-center">
+                  <h4 className="text-xl font-bold mb-4">Personal Branding</h4>
+                  <p className="text-4xl font-bold text-orange-500 mb-6">$800</p>
+                  <div className="space-y-2 text-gray-600">
+                    <p>1 hour session</p>
+                    <p>15 edited photos</p>
+                    <p>Professional styling tips</p>
+                    <p>Commercial usage rights</p>
+                  </div>
+                </div>
+                <div className="bg-gray-50 p-8 rounded-xl text-center">
+                  <h4 className="text-xl font-bold mb-4">Family Portraits</h4>
+                  <p className="text-4xl font-bold text-orange-500 mb-6">$1200</p>
+                  <div className="space-y-2 text-gray-600">
+                    <p>2 hours session</p>
+                    <p>30 edited photos</p>
+                    <p>Multiple poses & groupings</p>
+                    <p>Location consultation</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
