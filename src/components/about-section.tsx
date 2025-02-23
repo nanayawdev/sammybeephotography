@@ -20,7 +20,7 @@ export default function AboutSection() {
             </div>
             
             <p className="text-gray-600 leading-relaxed">
-              Capturing moments that tell stories, creating memories that last forever. Our passion for photography goes beyond just taking pictures - it's about preserving emotions, celebrating life's beautiful moments, and turning fleeting instances into timeless art.
+              Capturing moments that tell stories, creating memories that last forever. Our passion for photography goes beyond just taking pictures - it&apos;s about preserving emotions, celebrating life&apos;s beautiful moments, and turning fleeting instances into timeless art.
             </p>
 
             <button 
@@ -36,12 +36,12 @@ export default function AboutSection() {
           </div>
 
           {/* Right Image */}
-          <div className="relative w-full min-h-[500px]">
+          <div className="relative w-full min-h-[400px] flex items-center justify-center">
             <Image
               src="/film-roll.png"
               alt="Film roll with red splash"
               fill
-              className="object-contain"
+              className="object-contain scale-125"
               priority
             />
           </div>

@@ -31,7 +31,7 @@ export default function StoriesSection() {
     <section className="relative bg-black">
       <div className="max-w-[1920px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4">
-          {STORY_ITEMS.map((item, index) => (
+          {STORY_ITEMS.map((item) => (
             <a 
               key={item.title}
               href={item.href}
