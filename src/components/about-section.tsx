@@ -30,7 +30,7 @@ export default function AboutSection() {
                 active:scale-95
                 font-rubik"
             >
-              LEARN MORE
+              Our Story
               <ArrowUpRight className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
             </button>
           </div>

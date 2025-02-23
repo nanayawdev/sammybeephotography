@@ -19,12 +19,12 @@ export default function BookUsSection() {
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           {/* Main Content */}
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-medium text-white mb-6">
-            We are your design partner
+            Let's Create Your Story Together
           </h2>
           
           <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl">
-            Collaborating to elevate your success with innovative subscription design, offering tailored solutions 
-            that grow with your evolving needs and aspirations.
+            Every moment is unique, and we're here to capture yours. Whether it's your wedding day, 
+            a special celebration, or professional portraits, we'll help you preserve these precious memories forever.
           </p>
 
           {/* CTA Button */}
@@ -33,7 +33,7 @@ export default function BookUsSection() {
               transition-all duration-300 
               hover:shadow-lg hover:shadow-orange-500/20"
           >
-            Book Call
+            Book a Session
             <ArrowRight className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
         </div>
