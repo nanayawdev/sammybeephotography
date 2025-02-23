@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Send } from "lucide-react"
+import Image from "next/image"
 
 const SERVICE_OPTIONS = [
   "Wedding Photography",
@@ -19,10 +20,12 @@ export default function InquirySection() {
     <section className="relative grid grid-cols-1 lg:grid-cols-2">
       {/* Left Image */}
       <div className="relative h-[300px] lg:h-auto">
-        <img
+        <Image
           src="/studio-image.jpeg"
           alt="Photography contact"
-          className="absolute inset-0 w-full h-full object-cover"
+          fill
+          className="object-cover"
+          priority
         />
       </div>
 

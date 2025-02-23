@@ -8,7 +8,7 @@ export default function AboutPage() {
         <h1 className="text-5xl md:text-6xl font-bold mb-8">About Us</h1>
         <div className="prose prose-lg max-w-4xl">
           <p className="text-gray-600 mb-6">
-            At SammyBee Photography, we believe in capturing the essence of life's most precious moments. Our journey began with a passion for storytelling through the lens, and today, we continue to create timeless memories for our cherished clients.
+            At SammyBee Photography, we believe in capturing the essence of life&apos;s most precious moments. Our journey began with a passion for storytelling through the lens, and today, we continue to create timeless memories for our cherished clients.
           </p>
           <p className="text-gray-600 mb-6">
             With years of experience in wedding photography, portraits, and events, we bring a unique blend of artistic vision and technical expertise to every shoot. Our commitment to excellence and attention to detail ensures that each photograph tells its own story.

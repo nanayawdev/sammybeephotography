@@ -39,7 +39,7 @@ export default function ClientsPage() {
                   <p className="text-gray-600">{testimonial.event}</p>
                 </div>
               </div>
-              <p className="text-gray-600 italic">"{testimonial.quote}"</p>
+              <p className="text-gray-600 italic">&quot;{testimonial.quote}&quot;</p>
             </div>
           ))}
         </div>
