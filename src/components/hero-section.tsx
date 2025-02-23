@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { ArrowUpRight, Star, Instagram, Facebook, Youtube } from "lucide-react"
+import { ArrowUpRight, Instagram, Facebook, Youtube } from "lucide-react"
 import { BsTiktok } from "react-icons/bs"
 import Image from "next/image"
 import Navigation from "./navigation"
