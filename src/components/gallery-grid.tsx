@@ -1,8 +1,10 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
+import { useState } from "react"
+import Lightbox from "yet-another-react-lightbox"
+import "yet-another-react-lightbox/styles.css"
 
 const GALLERY_ITEMS = [
   {
@@ -64,12 +66,12 @@ const GALLERY_ITEMS = [
     image: "/gallery/sammybbee.jpeg",
     category: "Portrait",
     href: "/gallery/portrait"
-  },
-  
-  
+  }
 ]
 
 export default function GalleryGrid() {
+  const [currentImage, setCurrentImage] = useState(-1)
+
   return (
     <section className="relative bg-white py-24">
       <div className="max-w-[1920px] mx-auto px-4 md:px-8">
@@ -80,25 +82,25 @@ export default function GalleryGrid() {
               Our Latest Work
             </h2>
             <p className="text-gray-600 max-w-2xl">
-              Explore our diverse portfolio of stunning photography, capturing life's beautiful moments with artistic precision.
+              Explore our diverse portfolio of stunning photography, capturing life&apos;s beautiful moments with artistic precision.
             </p>
           </div>
-          <Link 
-            href="/gallery"
+          <button 
+            onClick={() => setCurrentImage(0)}
             className="hidden md:inline-flex items-center text-orange-500 hover:text-orange-600 font-medium"
           >
             View All Work
             <ArrowUpRight className="ml-2 w-5 h-5" />
-          </Link>
+          </button>
         </div>
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {GALLERY_ITEMS.map((item, index) => (
-            <Link
+            <div
               key={item.image}
-              href={item.href}
-              className={`group relative overflow-hidden ${
+              onClick={() => setCurrentImage(index)}
+              className={`group relative overflow-hidden cursor-pointer ${
                 index === 2 || index === 5 || index === 7 ? 'row-span-2' : ''
               }`}
             >
@@ -117,20 +119,31 @@ export default function GalleryGrid() {
                   </div>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
 
         {/* Mobile View All Button */}
         <div className="mt-8 text-center md:hidden">
-          <Link 
-            href="/gallery"
+          <button 
+            onClick={() => setCurrentImage(0)}
             className="inline-flex items-center text-orange-500 hover:text-orange-600 font-medium"
           >
             View All Work
             <ArrowUpRight className="ml-2 w-5 h-5" />
-          </Link>
+          </button>
         </div>
+
+        {/* Lightbox */}
+        <Lightbox
+          open={currentImage >= 0}
+          index={currentImage}
+          close={() => setCurrentImage(-1)}
+          slides={GALLERY_ITEMS.map(item => ({ src: item.image }))}
+          styles={{
+            container: { backgroundColor: "rgba(0, 0, 0, .9)" },
+          }}
+        />
       </div>
     </section>
   )
