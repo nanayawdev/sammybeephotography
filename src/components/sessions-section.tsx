@@ -1,95 +1,138 @@
 "use client"
 
+import { useState, useRef } from "react"
 import Image from "next/image"
-import { ArrowUpRight } from "lucide-react"
+import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react"
 
 const SESSIONS = [
   {
-    title: "Weddings",
-    description: "Your special day captured with elegance and style",
-    image: "/sessions/wedding.jpg",
+    title: "Wedding Photography",
+    category: "Commercial",
+    image: "/sessions/wedding.jpeg",
     href: "/services/wedding"
   },
   {
-    title: "Graduations",
-    description: "Celebrate your academic achievements",
-    image: "/sessions/graduation.jpg",
+    title: "Graduation Photos",
+    category: "Commercial",
+    image: "/sessions/graduation.jpeg",
     href: "/services/graduation"
   },
   {
-    title: "Events",
-    description: "Professional coverage for all your special occasions",
-    image: "/sessions/events.jpg",
-    href: "/services/events"
-  },
-  {
-    title: "Engagement",
-    description: "Beautiful pre-wedding photography sessions",
-    image: "/sessions/engagement.jpg",
-    href: "/services/engagement"
-  },
-  {
-    title: "Studio Shoot",
-    description: "Professional studio photography with perfect lighting",
-    image: "/sessions/studio.jpg",
+    title: "Studio Sessions",
+    category: "New Build",
+    image: "/sessions/studio.jpeg",
     href: "/services/studio"
   },
   {
-    title: "Portraits",
-    description: "Capture your personality in stunning portraits",
-    image: "/sessions/portrait.jpg",
+    title: "Portrait Sessions",
+    category: "Commercial",
+    image: "/sessions/portrait.jpeg",
     href: "/services/portrait"
   },
   {
-    title: "Pre-Birthday",
-    description: "Make your birthday celebration extra special",
-    image: "/sessions/birthday.jpg",
+    title: "Pre-Birthday Shoot",
+    category: "Renovation",
+    image: "/sessions/birthday.jpeg",
     href: "/services/birthday"
   },
   {
-    title: "Commercial",
-    description: "Professional photography for your business needs",
-    image: "/sessions/commercial.jpg",
-    href: "/services/commercial"
+    title: "Family Portrait",
+    category: "Commercial",
+    image: "/sessions/family.jpeg",
+    href: "/services/family"
+  },
+  {
+    title: "Corporate Portrait",
+    category: "Commercial",
+    image: "/sessions/corporate.jpeg",
+    href: "/services/corporate"
+  },
+  {
+    title: "Event Coverage",
+    category: "Commercial",
+    image: "/sessions/event.jpeg",
+    href: "/services/events"
   }
 ]
 
 export default function SessionsSection() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
+  
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = direction === 'left' ? -400 : 400
+      scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' })
+    }
+  }
+
   return (
     <section className="bg-white dark:bg-black py-24">
-      <div className="max-w-7xl mx-auto px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Photography Sessions</h2>
-          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Choose from our wide range of professional photography services tailored to capture your special moments.
-          </p>
+      <div className="max-w-[1920px] mx-auto px-8">
+        {/* Header */}
+        <div className="flex flex-col items-start mb-12">
+          <p className="text-orange-500 font-medium mb-2">our sessions.</p>
+          <h2 className="text-4xl md:text-6xl font-bold text-black dark:text-white">
+            PHOTOGRAPHY SESSIONS
+          </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {SESSIONS.map((session) => (
-            <a
-              key={session.title}
-              href={session.href}
-              className="group block bg-gray-100 dark:bg-gray-900 rounded-xl overflow-hidden"
-            >
-              <div className="relative h-64">
+        {/* Slider Container */}
+        <div className="relative">
+          {/* Projects Grid with Horizontal Scroll */}
+          <div 
+            ref={scrollContainerRef}
+            className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {SESSIONS.map((session) => (
+              <a
+                key={session.title}
+                href={session.href}
+                className="relative min-w-[400px] h-[600px] group overflow-hidden"
+              >
+                {/* Background Image */}
                 <Image
                   src={session.image}
                   alt={session.title}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-xl font-bold text-white mb-1">{session.title}</h3>
-                  <p className="text-white/80 text-sm">{session.description}</p>
+                
+                {/* Content Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8">
+                  <div className="space-y-4">
+                    <h3 className="text-3xl font-bold text-white">
+                      {session.title}
+                    </h3>
+                    <div className="flex items-center gap-4">
+                      <span className="px-4 py-1 bg-white/10 backdrop-blur-sm rounded-full text-white text-sm">
+                        {session.category}
+                      </span>
+                      <div className="w-8 h-8 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
+                        <ArrowUpRight className="w-5 h-5 text-white" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-sm rounded-lg p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <ArrowUpRight className="w-5 h-5 text-white" />
-                </div>
-              </div>
-            </a>
-          ))}
+              </a>
+            ))}
+          </div>
+
+          {/* Navigation Buttons */}
+          <div className="flex gap-2 mt-8">
+            <button
+              onClick={() => scroll('left')}
+              className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center hover:bg-gray-900 dark:hover:bg-gray-100 transition-colors"   
+            >
+              <ChevronLeft className="w-6 h-6 text-white dark:text-black" />
+            </button>
+            <button
+              onClick={() => scroll('right')}
+              className="w-12 h-12 bg-black dark:bg-white flex items-center justify-center hover:bg-gray-900 dark:hover:bg-gray-100 transition-colors"
+            >
+              <ChevronRight className="w-6 h-6 text-white dark:text-black" />
+            </button>
+          </div>
         </div>
       </div>
     </section>

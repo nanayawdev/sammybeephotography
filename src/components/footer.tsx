@@ -3,16 +3,17 @@
 import Link from "next/link"
 import { Instagram, Facebook, Youtube, Mail, Phone, MapPin } from "lucide-react"
 import { BsTiktok } from "react-icons/bs"
+import { ForwardRefExoticComponent, RefAttributes } from "react"
+import { LucideProps } from "lucide-react"
 
-const FOOTER_LINKS = {
-  Services: [
-    { label: "Wedding Photography", href: "/services/wedding" },
-    { label: "Portrait Sessions", href: "/services/portrait" },
-    { label: "Event Coverage", href: "/services/events" },
-    { label: "Studio Sessions", href: "/services/studio" },
-    { label: "Graduation Photos", href: "/services/graduation" },
-  ],
-  Company: [
+type FooterLink = {
+  label: string;
+  href: string;
+  icon?: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>;
+}
+
+const FOOTER_LINKS: Record<string, FooterLink[]> = {
+  Support: [
     { label: "About Us", href: "/about" },
     { label: "Contact", href: "/contact" },
     { label: "Booking", href: "/booking" },
@@ -22,6 +23,23 @@ const FOOTER_LINKS = {
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
     { label: "FAQ", href: "/faq" },
+  ],
+  Contact: [
+    { 
+      label: "info@sammybee.com",
+      href: "mailto:info@sammybee.com",
+      icon: Mail 
+    },
+    { 
+      label: "+233 123 456 789",
+      href: "tel:+233123456789",
+      icon: Phone 
+    },
+    { 
+      label: "123 Photography Street, Accra, Ghana",
+      href: "#",
+      icon: MapPin 
+    },
   ]
 }
 
@@ -29,12 +47,12 @@ export default function Footer() {
   return (
     <footer className="bg-black text-white">
       <div className="max-w-7xl mx-auto px-8 py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="space-y-6">
             <h2 className="text-2xl font-bold">SammyBee Photography</h2>
             <p className="text-gray-400 max-w-sm">
-              Capturing life's precious moments with artistic precision and professional excellence.
+              Capturing life&apos;s precious moments with artistic precision and professional excellence.
             </p>
             <div className="flex items-center gap-4">
               <a 
@@ -81,47 +99,18 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link 
                       href={link.href}
-                      className="text-gray-400 hover:text-white transition-colors"
+                      className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
                     >
-                      {link.label}
+                      {'icon' in link && link.icon && <link.icon className="w-4 h-4" />}
+                      <span className={link.icon ? "break-words" : ""}>
+                        {link.label}
+                      </span>
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
           ))}
-
-          {/* Contact Column */}
-          <div>
-            <h3 className="font-bold mb-6">Contact</h3>
-            <ul className="space-y-4">
-              <li>
-                <a 
-                  href="mailto:info@sammybee.com"
-                  className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
-                >
-                  <Mail className="w-4 h-4" />
-                  info@sammybee.com
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="tel:+233123456789"
-                  className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
-                >
-                  <Phone className="w-4 h-4" />
-                  +233 123 456 789
-                </a>
-              </li>
-              <li className="flex items-center gap-2 text-gray-400">
-                <MapPin className="w-4 h-4" />
-                <address className="not-italic">
-                  123 Photography Street,<br />
-                  Accra, Ghana
-                </address>
-              </li>
-            </ul>
-          </div>
         </div>
 
         {/* Bottom Bar */}
