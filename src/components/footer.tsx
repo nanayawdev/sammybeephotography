@@ -45,13 +45,13 @@ const FOOTER_LINKS: Record<string, FooterLink[]> = {
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white">
+    <footer className="bg-white dark:bg-black text-black dark:text-white">
       <div className="max-w-7xl mx-auto px-8 py-24">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold">SammyBee Photography</h2>
-            <p className="text-gray-400 max-w-sm">
+            <h2 className="text-2xl font-bold text-black dark:text-white">SammyBee Photography</h2>
+            <p className="text-gray-900 dark:text-white max-w-sm">
               Capturing life&apos;s precious moments with artistic precision and professional excellence.
             </p>
             <div className="flex items-center gap-4">
@@ -59,7 +59,7 @@ export default function Footer() {
                 href="https://instagram.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-900 dark:text-white hover:text-black dark:hover:text-white transition-colors"
               >
                 <Instagram className="w-5 h-5" />
               </a>
@@ -67,7 +67,7 @@ export default function Footer() {
                 href="https://facebook.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-900 dark:text-white hover:text-black dark:hover:text-white transition-colors"
               >
                 <Facebook className="w-5 h-5" />
               </a>
@@ -75,7 +75,7 @@ export default function Footer() {
                 href="https://tiktok.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-900 dark:text-white hover:text-black dark:hover:text-white transition-colors"
               >
                 <BsTiktok className="w-4 h-4" />
               </a>
@@ -83,7 +83,7 @@ export default function Footer() {
                 href="https://youtube.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-900 dark:text-white hover:text-black dark:hover:text-white transition-colors"
               >
                 <Youtube className="w-5 h-5" />
               </a>
@@ -99,7 +99,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link 
                       href={link.href}
-                      className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
+                      className="text-gray-900 dark:text-white hover:text-black dark:hover:text-white transition-colors flex items-center gap-2"
                     >
                       {'icon' in link && link.icon && <link.icon className="w-4 h-4" />}
                       <span className={link.icon ? "break-words" : ""}>
@@ -114,8 +114,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-24 pt-8 border-t border-white/10">
-          <p className="text-gray-400 text-sm text-center">
+        <div className="mt-24 pt-8 border-t border-black/10 dark:border-white/10">
+          <p className="text-gray-900 dark:text-white text-sm text-center">
             © {new Date().getFullYear()} SammyBee Photography. All rights reserved.
           </p>
         </div>
