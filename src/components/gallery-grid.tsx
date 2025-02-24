@@ -73,7 +73,7 @@ export default function GalleryGrid() {
   const [currentImage, setCurrentImage] = useState(-1)
 
   return (
-    <section className="relative bg-white py-24">
+    <section className="relative bg-white py-24 dark:bg-black">
       <div className="max-w-[1920px] mx-auto px-4 md:px-8">
         {/* Header */}
         <div className="flex justify-between items-end mb-12 max-w-7xl mx-auto">
@@ -81,7 +81,7 @@ export default function GalleryGrid() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Our Latest Work
             </h2>
-            <p className="text-gray-600 max-w-2xl">
+            <p className="text-gray-600 max-w-2xl dark:text-white">
               Explore our diverse portfolio of stunning photography, capturing life&apos;s beautiful moments with artistic precision.
             </p>
           </div>
