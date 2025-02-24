@@ -24,7 +24,7 @@ export default function BookingModal({ isOpen, onClose }: { isOpen: boolean; onC
           <div className="flex justify-between items-start mb-8">
             <div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Book a Session</h3>
-              <p className="text-gray-600 dark:text-gray-300">Fill in the details and we'll get back to you shortly.</p>
+              <p className="text-gray-600 dark:text-gray-300">Fill in the details and we&apos;ll get back to you shortly.</p>
             </div>
             <button 
               onClick={onClose}
