@@ -10,7 +10,7 @@ const CAROUSEL_ITEMS = [
   {
     image:
       "/studio-image2.jpeg",
-    title: "SAMMYBBEE\nPHOTOGRAPHY",
+    title: "SAMMYBBEE\nPHOTOS",
     hasGradient: true
   },
   {
