@@ -47,19 +47,21 @@ export default function StoriesSection() {
                 priority
               />
               
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/90 transition-opacity duration-500 group-hover:opacity-100" />
+              {/* Permanent Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/90" />
 
               {/* Content */}
               <div className="absolute inset-0 flex flex-col justify-end p-8">
-                <div className="transform translate-y-4 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                <div className="transform transition-all duration-500">
                   <h3 className="text-3xl font-bold text-white mb-4">
                     {item.title}
                   </h3>
                   
-                  <div className="flex items-center text-white/70 text-sm font-medium">
-                    <span className="mr-2">View Gallery</span>
-                    <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  <div className="flex items-center text-white/70 text-sm font-medium overflow-hidden">
+                    <div className="transform translate-y-8 transition-transform duration-500 group-hover:translate-y-0 flex items-center">
+                      <span className="mr-2">View Gallery</span>
+                      <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    </div>
                   </div>
                 </div>
               </div>
