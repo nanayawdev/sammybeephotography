@@ -38,7 +38,7 @@ export default function AboutSection() {
           {/* Right Image */}
           <div className="relative w-full min-h-[400px] hidden md:flex items-center justify-center">
             <Image
-              src="/film-roll.png"
+              src="/sammybbee.jpeg"
               alt="Film roll with red splash"
               fill
               className="object-contain scale-125"
