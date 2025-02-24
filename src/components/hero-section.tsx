@@ -37,6 +37,7 @@ export default function HeroSection() {
         setIsChanging(false)
       }, 300)
     }, 5000)
+
     return () => clearInterval(timer)
   }, [])
 
@@ -149,9 +150,9 @@ export default function HeroSection() {
               </a>
             </div>
 
-            {/* Enhanced CTA Button */}
+            {/* Enhanced CTA Button - Hidden on mobile */}
             <button 
-              className="group inline-flex items-center bg-gradient-to-r from-orange-400 to-orange-500 text-white rounded-xl px-5 py-3 text-sm font-medium h-[42px]
+              className="hidden md:inline-flex group items-center bg-gradient-to-r from-orange-400 to-orange-500 text-white rounded-xl px-5 py-3 text-sm font-medium h-[42px]
                 transition-all duration-300 
                 hover:shadow-lg hover:shadow-orange-500/20 
                 hover:brightness-110 hover:scale-105 
