@@ -402,12 +402,8 @@ export async function generateMetadata({ params }: { params: ServiceParams }): P
   }
 }
 
-// Update the page component type
-interface PageProps {
-  params: ServiceParams
-}
-
-export default function ServicePage({ params }: PageProps) {
+// Update the page component to be async
+export default async function ServicePage({ params }: { params: ServiceParams }) {
   const serviceData = SERVICES_DATA[params.type as keyof typeof SERVICES_DATA]
 
   if (!serviceData) {
