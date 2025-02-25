@@ -2,6 +2,7 @@ import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import Image from "next/image"
 import { notFound } from "next/navigation"
+import { Metadata } from "next"
 
 const SERVICES_DATA = {
   wedding: {
@@ -386,7 +387,22 @@ const SERVICES_DATA = {
   }
 }
 
-export default function ServicePage({ params }: { params: { type: string } }) {
+// Define the params type
+type ServiceParams = {
+  type: string
+}
+
+// Add metadata generation
+export async function generateMetadata({ params }: { params: ServiceParams }): Promise<Metadata> {
+  const serviceData = SERVICES_DATA[params.type as keyof typeof SERVICES_DATA]
+  
+  return {
+    title: serviceData ? `${serviceData.title} | SammyBbee Photography` : 'Service Not Found',
+    description: serviceData?.description
+  }
+}
+
+export default function ServicePage({ params }: { params: ServiceParams }) {
   const serviceData = SERVICES_DATA[params.type as keyof typeof SERVICES_DATA]
 
   if (!serviceData) {
