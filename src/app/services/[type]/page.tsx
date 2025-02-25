@@ -15,7 +15,35 @@ const SERVICES_DATA = {
       "Online gallery",
       "Premium photo album"
     ],
-    price: "GH₵ 15,000"
+    packages: {
+      basic: {
+        title: "PRE-WEDDING SESSION",
+        description: "Create beautiful memories before your big day with our premium pre-wedding package.",
+        image: "/gallery/sammybbee1.jpeg",
+        features: [
+          "2 hours coverage",
+          "2 outfit changes",
+          "30 images, 10 retouched images",
+          "1 Photographer + 1 Creative Director",
+          "A 30-minute consultation with the creative team"
+        ],
+        price: "GH₵ 3,000"
+      },
+      premium: {
+        title: "POST-WEDDING SESSION",
+        description: "Capture your newlywed bliss with our comprehensive post-wedding package.",
+        image: "/gallery/sammybbee2.jpeg",
+        features: [
+          "2 hours coverage",
+          "2 outfit changes",
+          "40 edited photos",
+          "15 retouched images",
+          "1 Photographer + 1 Creative Director",
+          "Complimentary Hair & Makeup"
+        ],
+        price: "GH₵ 4,500"
+      }
+    }
   },
   graduation: {
     title: "Graduation Photography",
@@ -28,20 +56,69 @@ const SERVICES_DATA = {
       "Professional editing",
       "Quick turnaround"
     ],
-    price: "GH₵ 5,000"
+    packages: {
+      basic: {
+        title: "SOLO SESSION",
+        description: "Perfect for individual graduation portraits.",
+        image: "/gallery/graduation/2.jpeg",
+        features: [
+          "1 hour coverage",
+          "2 outfit changes",
+          "20 edited photos",
+          "Campus locations",
+          "Digital delivery"
+        ],
+        price: "GH₵ 2,500"
+      },
+      premium: {
+        title: "GROUP SESSION",
+        description: "Ideal for friends and family graduation celebrations.",
+        image: "/gallery/graduation/3.jpeg",
+        features: [
+          "2 hours coverage",
+          "Multiple group shots",
+          "Individual portraits",
+          "40 edited photos",
+          "Multiple campus locations",
+          "Same-day preview images"
+        ],
+        price: "GH₵ 3,500"
+      }
+    }
   },
   studio: {
     title: "Studio Sessions",
     description: "Professional studio photography with premium lighting and backdrops.",
     image: "/gallery/studio/1.jpeg",
-    features: [
-      "1-hour session",
-      "Multiple backgrounds",
-      "Professional lighting",
-      "3 outfit changes",
-      "Retouched images"
-    ],
-    price: "GH₵ 3,000"
+    packages: {
+      basic: {
+        title: "CLASSIC STUDIO",
+        description: "Perfect for professional headshots and portraits.",
+        image: "/gallery/studio/2.jpeg",
+        features: [
+          "1 hour session",
+          "2 outfit changes",
+          "15 edited photos",
+          "Basic retouching",
+          "Digital delivery"
+        ],
+        price: "GH₵ 2,000"
+      },
+      premium: {
+        title: "PREMIUM STUDIO",
+        description: "Comprehensive studio session with multiple setups.",
+        image: "/gallery/studio/3.jpeg",
+        features: [
+          "2 hours session",
+          "4 outfit changes",
+          "Multiple backgrounds",
+          "30 edited photos",
+          "Advanced retouching",
+          "Same-day previews"
+        ],
+        price: "GH₵ 3,500"
+      }
+    }
   },
   portrait: {
     title: "Portrait Sessions",
@@ -54,7 +131,35 @@ const SERVICES_DATA = {
       "Digital delivery",
       "Basic retouching"
     ],
-    price: "GH₵ 2,500"
+    packages: {
+      basic: {
+        title: "STANDARD PORTRAIT",
+        description: "Classic portrait session in a single location.",
+        image: "/gallery/portrait/2.jpeg",
+        features: [
+          "1 hour session",
+          "2 outfit changes",
+          "Indoor/Outdoor options",
+          "15 edited photos",
+          "Basic retouching"
+        ],
+        price: "GH₵ 2,000"
+      },
+      premium: {
+        title: "SIGNATURE PORTRAIT",
+        description: "Premium portrait experience with multiple locations.",
+        image: "/gallery/portrait/3.jpeg",
+        features: [
+          "2 hours session",
+          "3 outfit changes",
+          "Multiple locations",
+          "25 edited photos",
+          "Advanced retouching",
+          "Style consultation"
+        ],
+        price: "GH₵ 3,500"
+      }
+    }
   },
   family: {
     title: "Family Portrait",
@@ -67,59 +172,175 @@ const SERVICES_DATA = {
       "Digital gallery",
       "Print options"
     ],
-    price: "GH₵ 4,000"
+    packages: {
+      basic: {
+        title: "FAMILY ESSENTIALS",
+        description: "Perfect for small family groups up to 5 people.",
+        image: "/gallery/family/2.jpeg",
+        features: [
+          "1 hour session",
+          "Single location",
+          "20 edited photos",
+          "Group & individual shots",
+          "Digital delivery"
+        ],
+        price: "GH₵ 3,000"
+      },
+      premium: {
+        title: "EXTENDED FAMILY",
+        description: "Ideal for larger family groups and multiple combinations.",
+        image: "/gallery/family/3.jpeg",
+        features: [
+          "2 hours session",
+          "Multiple locations",
+          "40 edited photos",
+          "Extended group shots",
+          "Individual family units",
+          "Print package included"
+        ],
+        price: "GH₵ 5,000"
+      }
+    }
   },
   corporate: {
     title: "Corporate Portrait",
     description: "Professional headshots and corporate photography services.",
     image: "/gallery/corporate/1.jpeg",
-    features: [
-      "Professional headshots",
-      "Company branding",
-      "Quick delivery",
-      "Team photos",
-      "LinkedIn optimization"
-    ],
-    price: "GH₵ 3,500"
+    packages: {
+      basic: {
+        title: "BUSINESS ESSENTIALS",
+        description: "Professional headshots for individuals and small teams.",
+        image: "/gallery/corporate/2.jpeg",
+        features: [
+          "2 hours session",
+          "Basic retouching",
+          "Individual headshots",
+          "2 outfit changes",
+          "Digital delivery"
+        ],
+        price: "GH₵ 3,000"
+      },
+      premium: {
+        title: "CORPORATE COMPLETE",
+        description: "Comprehensive corporate photography package.",
+        image: "/gallery/corporate/3.jpeg",
+        features: [
+          "Full day session",
+          "Team photos",
+          "Individual headshots",
+          "Multiple backgrounds",
+          "Advanced retouching",
+          "Company branding alignment",
+          "Same-day previews"
+        ],
+        price: "GH₵ 6,000"
+      }
+    }
   },
   events: {
     title: "Event Coverage",
     description: "Comprehensive coverage for all your special events.",
     image: "/gallery/events/1.jpeg",
-    features: [
-      "Full event coverage",
-      "Multiple angles",
-      "Candid shots",
-      "Same-day previews",
-      "Event highlight reel"
-    ],
-    price: "GH₵ 8,000"
+    packages: {
+      basic: {
+        title: "EVENT STANDARD",
+        description: "Essential event photography coverage.",
+        image: "/gallery/events/2.jpeg",
+        features: [
+          "4 hours coverage",
+          "One photographer",
+          "100 edited photos",
+          "Online gallery",
+          "Quick turnaround"
+        ],
+        price: "GH₵ 5,000"
+      },
+      premium: {
+        title: "EVENT PREMIUM",
+        description: "Complete event documentation with enhanced coverage.",
+        image: "/gallery/events/3.jpeg",
+        features: [
+          "8 hours coverage",
+          "Two photographers",
+          "200 edited photos",
+          "Highlight reel",
+          "Same-day previews",
+          "Drone coverage",
+          "Premium photo album"
+        ],
+        price: "GH₵ 8,000"
+      }
+    }
   },
   birthday: {
     title: "Pre-Birthday Shoot",
     description: "Make your birthday special with a custom photo session.",
     image: "/gallery/birthday/1.jpeg",
-    features: [
-      "Themed shoots",
-      "Multiple locations",
-      "Props included",
-      "Digital delivery",
-      "Social media ready"
-    ],
-    price: "GH₵ 2,000"
+    packages: {
+      basic: {
+        title: "BIRTHDAY CLASSIC",
+        description: "Perfect for capturing your birthday memories.",
+        image: "/gallery/birthday/2.jpeg",
+        features: [
+          "2 hours session",
+          "2 locations",
+          "3 outfit changes",
+          "30 edited photos",
+          "Basic props included"
+        ],
+        price: "GH₵ 2,500"
+      },
+      premium: {
+        title: "BIRTHDAY DELUXE",
+        description: "Create an unforgettable birthday photo experience.",
+        image: "/gallery/birthday/3.jpeg",
+        features: [
+          "4 hours session",
+          "Multiple locations",
+          "5 outfit changes",
+          "50 edited photos",
+          "Premium props",
+          "Makeup artist",
+          "Same-day preview"
+        ],
+        price: "GH₵ 4,000"
+      }
+    }
   },
   personal: {
     title: "Personal Branding",
     description: "Build your professional image with our personal branding photography.",
     image: "/gallery/personal/1.jpeg",
-    features: [
-      "Brand consultation",
-      "Multiple outfit changes",
-      "Various locations",
-      "Social media kit",
-      "Professional retouching"
-    ],
-    price: "GH₵ 4,500"
+    packages: {
+      basic: {
+        title: "BRAND STARTER",
+        description: "Essential personal branding photography package.",
+        image: "/gallery/personal/2.jpeg",
+        features: [
+          "2 hours session",
+          "2 outfit changes",
+          "1 location",
+          "20 edited photos",
+          "Social media kit"
+        ],
+        price: "GH₵ 3,500"
+      },
+      premium: {
+        title: "BRAND PREMIUM",
+        description: "Comprehensive personal branding solution.",
+        image: "/gallery/personal/3.jpeg",
+        features: [
+          "4 hours session",
+          "4 outfit changes",
+          "Multiple locations",
+          "40 edited photos",
+          "Advanced retouching",
+          "Brand consultation",
+          "Content calendar planning"
+        ],
+        price: "GH₵ 6,000"
+      }
+    }
   },
   fashion: {
     title: "Fashion & Model",
@@ -132,7 +353,36 @@ const SERVICES_DATA = {
       "High-end retouching",
       "Portfolio preparation"
     ],
-    price: "GH₵ 5,500"
+    packages: {
+      basic: {
+        title: "PORTFOLIO STARTER",
+        description: "Essential fashion portfolio session.",
+        image: "/gallery/fashion/2.jpeg",
+        features: [
+          "2 hours session",
+          "3 outfit changes",
+          "Studio setup",
+          "20 edited photos",
+          "Basic retouching"
+        ],
+        price: "GH₵ 4,000"
+      },
+      premium: {
+        title: "FASHION EDITORIAL",
+        description: "Complete fashion editorial experience.",
+        image: "/gallery/fashion/3.jpeg",
+        features: [
+          "4 hours session",
+          "6 outfit changes",
+          "Studio & Location",
+          "40 edited photos",
+          "Advanced retouching",
+          "Styling assistance",
+          "Makeup artist included"
+        ],
+        price: "GH₵ 7,000"
+      }
+    }
   }
 }
 
@@ -174,7 +424,7 @@ export default function ServicePage({ params }: { params: { type: string } }) {
               </p>
               <button className="mt-8 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg
                 hover:bg-white/20 transition-all duration-300">
-                Book This Service
+                Read Our FAQ
               </button>
             </div>
           </div>
@@ -182,83 +432,85 @@ export default function ServicePage({ params }: { params: { type: string } }) {
       </section>
 
       {/* Packages Section */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-black dark:text-white">
-            PHOTOGRAPHY PACKAGES
-          </h2>
+      {serviceData.packages ? (
+        <section className="py-24">
+          <div className="max-w-7xl mx-auto px-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-black dark:text-white">
+              PHOTOGRAPHY PACKAGES
+            </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Basic Package */}
-            <div className="group relative h-[600px] overflow-hidden rounded-2xl">
-              <Image
-                src="/gallery/sammybbee1.jpeg"
-                alt="Basic package"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
-                <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <h3 className="text-2xl font-bold mb-4 text-white">BASIC SESSION</h3>
-                  <p className="text-gray-300 mb-6">
-                    Perfect for those looking for essential coverage with professional quality.
-                  </p>
-                  <ul className="space-y-3 text-gray-300 mb-8">
-                    {serviceData.features.slice(0, 3).map(feature => (
-                      <li key={feature}>• {feature}</li>
-                    ))}
-                  </ul>
-                  <div className="flex items-center justify-between">
-                    <p className="text-3xl font-bold text-orange-500">
-                      {serviceData.price}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {/* Basic Package */}
+              <div className="group relative h-[600px] overflow-hidden rounded-2xl">
+                <Image
+                  src={serviceData.packages.basic.image}
+                  alt={serviceData.packages.basic.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
+                  <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <h3 className="text-2xl font-bold mb-4 text-white">{serviceData.packages.basic.title}</h3>
+                    <p className="text-gray-300 mb-6">
+                      {serviceData.packages.basic.description}
                     </p>
-                    <button className="bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-lg 
-                      opacity-0 group-hover:opacity-100 transition-all duration-300 
-                      hover:bg-white/20">
-                      Book Now
-                    </button>
+                    <ul className="space-y-3 text-gray-300 mb-8">
+                      {serviceData.packages.basic.features.map(feature => (
+                        <li key={feature}>• {feature}</li>
+                      ))}
+                    </ul>
+                    <div className="flex items-center justify-between">
+                      <p className="text-3xl font-bold text-orange-500">
+                        {serviceData.packages.basic.price}
+                      </p>
+                      <button className="bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-lg 
+                        opacity-0 group-hover:opacity-100 transition-all duration-300 
+                        hover:bg-white/20">
+                        Book Now
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Premium Package */}
-            <div className="group relative h-[600px] overflow-hidden rounded-2xl">
-              <Image
-                src="/gallery/sammybbee2.jpeg"
-                alt="Premium package"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
-                <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <h3 className="text-2xl font-bold mb-4 text-white">PREMIUM SESSION</h3>
-                  <p className="text-gray-300 mb-6">
-                    Our comprehensive package with additional features and premium services.
-                  </p>
-                  <ul className="space-y-3 text-gray-300 mb-8">
-                    {serviceData.features.map(feature => (
-                      <li key={feature}>• {feature}</li>
-                    ))}
-                  </ul>
-                  <div className="flex items-center justify-between">
-                    <p className="text-3xl font-bold text-orange-500">
-                      {parseInt(serviceData.price.replace(/[^\d]/g, '')) * 1.5} GH₵
+              {/* Premium Package */}
+              <div className="group relative h-[600px] overflow-hidden rounded-2xl">
+                <Image
+                  src={serviceData.packages.premium.image}
+                  alt={serviceData.packages.premium.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
+                  <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <h3 className="text-2xl font-bold mb-4 text-white">{serviceData.packages.premium.title}</h3>
+                    <p className="text-gray-300 mb-6">
+                      {serviceData.packages.premium.description}
                     </p>
-                    <button className="bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-lg 
-                      opacity-0 group-hover:opacity-100 transition-all duration-300 
-                      hover:bg-white/20">
-                      Book Now
-                    </button>
+                    <ul className="space-y-3 text-gray-300 mb-8">
+                      {serviceData.packages.premium.features.map(feature => (
+                        <li key={feature}>• {feature}</li>
+                      ))}
+                    </ul>
+                    <div className="flex items-center justify-between">
+                      <p className="text-3xl font-bold text-orange-500">
+                        {serviceData.packages.premium.price}
+                      </p>
+                      <button className="bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-lg 
+                        opacity-0 group-hover:opacity-100 transition-all duration-300 
+                        hover:bg-white/20">
+                        Book Now
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
 
       <Footer />
     </main>
