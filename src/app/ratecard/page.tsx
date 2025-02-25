@@ -3,22 +3,18 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Navigation from "@/components/navigation"
+import Footer from "@/components/footer"
 
 const HERO_SLIDES = [
   {
     image: "/studio-image.jpeg",
-    title: "CREATIVITY AT IT'S FINEST",
-    subtitle: "INVEST IN YOUR MEMORIES."
+    title: "INVEST IN YOUR MEMORIES",
+    subtitle: "Professional photography packages tailored to your needs."
   },
   {
     image: "/studio-image2.jpeg",
-    title: "CAPTURING TIMELESS MOMENTS",
-    subtitle: "EVERY DETAIL MATTERS."
-  },
-  {
-    image: "/studio-image3.jpeg",
-    title: "PROFESSIONAL EXCELLENCE",
-    subtitle: "CREATING LASTING IMPRESSIONS."
+    title: "CAPTURE THE MOMENTS",
+    subtitle: "Premium quality photography services."
   }
 ]
 
@@ -39,13 +35,11 @@ export default function RateCardPage() {
   }, [])
 
   return (
-    <main className="min-h-screen bg-white">
-      {/* Hero Section - Reduced height */}
+    <main className="min-h-screen bg-white dark:bg-black">
+      <Navigation />
+      
+      {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] max-h-[600px] bg-black">
-        {/* Add Navigation */}
-        <Navigation />
-
-        {/* Background Image with smooth transition */}
         <Image
           src={HERO_SLIDES[activeSlide].image}
           alt="Hero background"
@@ -56,28 +50,16 @@ export default function RateCardPage() {
           priority
         />
 
-        {/* Gradient Overlay */}
         <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
 
-        {/* Content - Adjusted padding */}
         <div className="relative h-full max-w-7xl mx-auto px-8 flex flex-col justify-end pb-16">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
               {HERO_SLIDES[activeSlide].title}
             </h1>
-            <p className="text-lg md:text-xl text-gray-300 mb-6">
+            <p className="text-lg md:text-xl text-gray-300">
               {HERO_SLIDES[activeSlide].subtitle}
             </p>
-            <button className="bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-lg hover:bg-white/20 transition-colors">
-              READ FAQ BEFORE BOOKING
-            </button>
-          </div>
-
-          {/* Slide Counter */}
-          <div className="absolute bottom-6 right-8 text-white/70">
-            <span className="text-2xl font-medium">0{activeSlide + 1}</span>
-            <span className="mx-2">/</span>
-            <span>0{HERO_SLIDES.length}</span>
           </div>
         </div>
       </section>
@@ -85,123 +67,84 @@ export default function RateCardPage() {
       {/* Packages Section */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-8">
-          {/* Wedding Packages */}
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              PRE AND POST WEDDING PHOTOGRAPHY PACKAGES
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black dark:text-white">
+              WEDDING PHOTOGRAPHY PACKAGES
             </h2>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Choose the perfect package for your special day. All packages include high-resolution digital images and professional editing.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Pre-Wedding Package */}
-            <div className="space-y-8">
-              <Image
-                src="/gallery/sammybbee1.jpeg"
-                alt="Pre-wedding photography"
-                width={600}
-                height={400}
-                className="w-full aspect-[4/3] object-cover"
-              />
-              <div className="text-center">
-                <h3 className="text-2xl font-bold mb-4">PRE-WEDDING SESSION</h3>
-                <p className="text-gray-600 mb-6">
-                  Looking to create beautiful images in anticipation of your big day? This Package is your best bet!
+            <div className="group bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+              <div className="relative h-80">
+                <Image
+                  src="/gallery/sammybbee1.jpeg"
+                  alt="Pre-wedding photography"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-bold mb-4 text-black dark:text-white">PRE-WEDDING SESSION</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-6">
+                  Create beautiful memories before your big day with our premium pre-wedding package.
                 </p>
-                <div className="space-y-2 text-gray-700">
-                  <p>2 hours + 2 looks</p>
-                  <p>30 images, 10 retouched images</p>
-                  <p>1 Photographer + 1 Creative Director</p>
-                  <p>A 30-minute consultation with the creative team.</p>
+                <ul className="space-y-3 text-gray-600 dark:text-gray-300 mb-8">
+                  <li>• 2 hours coverage</li>
+                  <li>• 2 outfit changes</li>
+                  <li>• 30 edited photos</li>
+                  <li>• 10 retouched images</li>
+                  <li>• 1 Photographer + 1 Creative Director</li>
+                  <li>• 30-minute consultation</li>
+                </ul>
+                <div className="flex items-center justify-between">
+                  <p className="text-3xl font-bold text-orange-500">GH₵ 15,000</p>
+                  <button className="bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-lg hover:bg-gray-900 dark:hover:bg-gray-100 transition-colors">
+                    Book Now
+                  </button>
                 </div>
-                <p className="text-2xl font-bold mt-6">$ 3000.00</p>
               </div>
             </div>
 
             {/* Post-Wedding Package */}
-            <div className="space-y-8">
-              <Image
-                src="/gallery/sammybbee2.jpeg"
-                alt="Post-wedding photography"
-                width={600}
-                height={400}
-                className="w-full aspect-[4/3] object-cover"
-              />
-              <div className="text-center">
-                <h3 className="text-2xl font-bold mb-4">POST-WEDDING SESSION</h3>
-                <p className="text-gray-600 mb-6">
-                  This package is tailored to meet the needs of both newlyweds and other married couples.
+            <div className="group bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+              <div className="relative h-80">
+                <Image
+                  src="/gallery/sammybbee2.jpeg"
+                  alt="Post-wedding photography"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-bold mb-4 text-black dark:text-white">POST-WEDDING SESSION</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-6">
+                  Capture your newlywed bliss with our comprehensive post-wedding package.
                 </p>
-                <div className="space-y-2 text-gray-700">
-                  <p>2 hours + 2 looks</p>
-                  <p>40 images, 15 Retouched images</p>
-                  <p>1 Photographer + 1 Creative Director</p>
-                  <p>Complimentary Hair & Makeup</p>
-                  <p>1-hour consultation with the creative team.</p>
-                </div>
-                <p className="text-2xl font-bold mt-6">$ 4500.00</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Additional Categories */}
-          <div className="space-y-24">
-            {/* Engagement Sessions */}
-            <div>
-              <h3 className="text-2xl font-bold mb-8 text-center">ENGAGEMENT SESSIONS</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-gray-50 p-8 rounded-xl text-center">
-                  <h4 className="text-xl font-bold mb-4">Classic Session</h4>
-                  <p className="text-4xl font-bold text-orange-500 mb-6">$1500</p>
-                  <div className="space-y-2 text-gray-600">
-                    <p>1.5 hours coverage</p>
-                    <p>25 edited photos</p>
-                    <p>1 location</p>
-                    <p>Online gallery</p>
-                  </div>
-                </div>
-                <div className="bg-gray-50 p-8 rounded-xl text-center">
-                  <h4 className="text-xl font-bold mb-4">Premium Session</h4>
-                  <p className="text-4xl font-bold text-orange-500 mb-6">$2500</p>
-                  <div className="space-y-2 text-gray-600">
-                    <p>3 hours coverage</p>
-                    <p>50 edited photos</p>
-                    <p>2 locations</p>
-                    <p>Online gallery</p>
-                    <p>Complimentary styling</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Portrait Sessions */}
-            <div>
-              <h3 className="text-2xl font-bold mb-8 text-center">PORTRAIT SESSIONS</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-gray-50 p-8 rounded-xl text-center">
-                  <h4 className="text-xl font-bold mb-4">Personal Branding</h4>
-                  <p className="text-4xl font-bold text-orange-500 mb-6">$800</p>
-                  <div className="space-y-2 text-gray-600">
-                    <p>1 hour session</p>
-                    <p>15 edited photos</p>
-                    <p>Professional styling tips</p>
-                    <p>Commercial usage rights</p>
-                  </div>
-                </div>
-                <div className="bg-gray-50 p-8 rounded-xl text-center">
-                  <h4 className="text-xl font-bold mb-4">Family Portraits</h4>
-                  <p className="text-4xl font-bold text-orange-500 mb-6">$1200</p>
-                  <div className="space-y-2 text-gray-600">
-                    <p>2 hours session</p>
-                    <p>30 edited photos</p>
-                    <p>Multiple poses & groupings</p>
-                    <p>Location consultation</p>
-                  </div>
+                <ul className="space-y-3 text-gray-600 dark:text-gray-300 mb-8">
+                  <li>• 2 hours coverage</li>
+                  <li>• 2 outfit changes</li>
+                  <li>• 40 edited photos</li>
+                  <li>• 15 retouched images</li>
+                  <li>• 1 Photographer + 1 Creative Director</li>
+                  <li>• Complimentary Hair & Makeup</li>
+                </ul>
+                <div className="flex items-center justify-between">
+                  <p className="text-3xl font-bold text-orange-500">GH₵ 20,000</p>
+                  <button className="bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-lg hover:bg-gray-900 dark:hover:bg-gray-100 transition-colors">
+                    Book Now
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <Footer />
     </main>
   )
 } 
