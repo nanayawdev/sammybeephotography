@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
 import { ChevronDown } from "lucide-react"
+import Image from "next/image"
 
 // Import the sessions data
 const SESSIONS = [
@@ -56,6 +57,7 @@ const NAV_ITEMS = [
     submenus: [
       {
         label: "Wedding",
+        image: "/gallery/wedding/1.jpeg",
         items: [
           { label: "Pre-Wedding", href: "/services/pre-wedding" },
           { label: "Wedding Day", href: "/services/wedding" },
@@ -64,6 +66,7 @@ const NAV_ITEMS = [
       },
       {
         label: "Portrait",
+        image: "/gallery/portrait/1.jpeg",
         items: [
           { label: "Studio Sessions", href: "/services/studio" },
           { label: "Outdoor Sessions", href: "/services/outdoor" },
@@ -72,6 +75,7 @@ const NAV_ITEMS = [
       },
       {
         label: "Events",
+        image: "/gallery/events/1.jpeg",
         items: [
           { label: "Corporate Events", href: "/services/corporate" },
           { label: "Birthday Parties", href: "/services/birthday" },
@@ -107,36 +111,58 @@ export default function Navigation() {
             {NAV_ITEMS.map((item) => (
               <div key={item.label} className="relative group">
                 {item.submenus ? (
-                  // Menu with submenu
                   <div className="flex items-center gap-1 text-sm font-rubik tracking-wider text-white/70 hover:text-white cursor-pointer">
                     {item.label}
                     <ChevronDown className="w-4 h-4" />
                     
                     {/* Mega Menu Dropdown */}
-                    <div className="absolute top-full left-0 mt-2 w-[480px] bg-black/90 backdrop-blur-sm rounded-lg 
+                    <div className="absolute top-full mt-2 
+                      w-[calc(100vw-2rem)] md:w-[800px] bg-black/90 backdrop-blur-sm rounded-lg 
                       invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300
-                      grid grid-cols-3 gap-4 p-6">
-                      {item.submenus.map((submenu) => (
-                        <div key={submenu.label} className="space-y-3">
-                          <h3 className="font-medium text-white">{submenu.label}</h3>
-                          <ul className="space-y-2">
-                            {submenu.items.map((subItem) => (
-                              <li key={subItem.href}>
-                                <Link
-                                  href={subItem.href}
-                                  className="block text-sm text-white/70 hover:text-white transition-colors"
-                                >
-                                  {subItem.label}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
+                      p-6 grid grid-cols-1 md:grid-cols-[1fr,2px,1fr,2px,1fr] gap-6
+                      max-h-[80vh] md:max-h-none overflow-y-auto md:overflow-visible
+                      left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0">
+                      {item.submenus.map((submenu, index) => (
+                        <div key={submenu.label} className="contents">
+                          <div className="space-y-6">
+                            {/* Image */}
+                            <div className="relative h-40 rounded-lg overflow-hidden">
+                              <Image
+                                src={submenu.image}
+                                alt={submenu.label}
+                                fill
+                                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                              />
+                              <div className="absolute inset-0 bg-black/30" />
+                              <h3 className="absolute bottom-4 left-4 font-medium text-white text-lg">
+                                {submenu.label}
+                              </h3>
+                            </div>
+                            
+                            {/* Links */}
+                            <ul className="space-y-3">
+                              {submenu.items.map((subItem) => (
+                                <li key={subItem.href}>
+                                  <Link
+                                    href={subItem.href}
+                                    className="block text-sm text-white/70 hover:text-white transition-colors"
+                                  >
+                                    {subItem.label}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          
+                          {/* Divider */}
+                          {index < item.submenus.length - 1 && (
+                            <div className="hidden md:block bg-white/10 w-[2px]" />
+                          )}
                         </div>
                       ))}
                     </div>
                   </div>
                 ) : (
-                  // Regular menu item
                   <Link
                     href={item.href}
                     className={`text-sm font-rubik tracking-wider
