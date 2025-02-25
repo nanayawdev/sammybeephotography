@@ -387,13 +387,16 @@ const SERVICES_DATA = {
   }
 }
 
-// Define the params type
-type ServiceParams = {
-  type: string
+// Define the params type for generateMetadata
+type Props = {
+  params: {
+    type: string
+  }
+  searchParams: { [key: string]: string | string[] | undefined }
 }
 
-// Add metadata generation
-export async function generateMetadata({ params }: { params: ServiceParams }): Promise<Metadata> {
+// Update metadata generation
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const serviceData = SERVICES_DATA[params.type as keyof typeof SERVICES_DATA]
   
   return {
@@ -402,8 +405,11 @@ export async function generateMetadata({ params }: { params: ServiceParams }): P
   }
 }
 
-// Update the page component to be async
-export default async function ServicePage({ params }: { params: ServiceParams }) {
+// Update the page component
+export default async function ServicePage({
+  params,
+  searchParams,
+}: Props) {
   const serviceData = SERVICES_DATA[params.type as keyof typeof SERVICES_DATA]
 
   if (!serviceData) {
