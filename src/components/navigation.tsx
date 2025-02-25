@@ -5,21 +5,59 @@ import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
 import { ChevronDown } from "lucide-react"
 
+// Import the sessions data
+const SESSIONS = [
+  {
+    title: "Wedding Photography",
+    category: "Commercial",
+    href: "/services/wedding"
+  },
+  {
+    title: "Graduation Photos",
+    category: "Commercial",
+    href: "/services/graduation"
+  },
+  {
+    title: "Studio Sessions",
+    category: "New Build",
+    href: "/services/studio"
+  },
+  {
+    title: "Portrait Sessions",
+    category: "Commercial",
+    href: "/services/portrait"
+  },
+  {
+    title: "Pre-Birthday Shoot",
+    category: "Renovation",
+    href: "/services/birthday"
+  },
+  {
+    title: "Family Portrait",
+    category: "Commercial",
+    href: "/services/family"
+  },
+  {
+    title: "Corporate Portrait",
+    category: "Commercial",
+    href: "/services/corporate"
+  },
+  {
+    title: "Event Coverage",
+    category: "Commercial",
+    href: "/services/events"
+  }
+]
+
 const NAV_ITEMS = [
   { label: "HOME", href: "/" },
   { 
     label: "RATECARD", 
-    href: "/ratecard",
-    dropdown: [
-      { label: "Wedding Photography", href: "/services/wedding" },
-      { label: "Graduation Photos", href: "/services/graduation" },
-      { label: "Studio Sessions", href: "/services/studio" },
-      { label: "Portrait Sessions", href: "/services/portrait" },
-      { label: "Pre-Birthday Shoot", href: "/services/birthday" },
-      { label: "Family Portrait", href: "/services/family" },
-      { label: "Corporate Portrait", href: "/services/corporate" },
-      { label: "Event Coverage", href: "/services/events" },
-    ]
+    href: "#",
+    dropdown: SESSIONS.map(session => ({
+      label: session.title,
+      href: session.href
+    }))
   },
   { label: "GALLERY", href: "/gallery" },
   { label: "CLIENTS", href: "/clients" },
@@ -55,6 +93,7 @@ export default function Navigation() {
               >
                 <Link
                   href={item.href}
+                  onClick={(e) => item.dropdown && e.preventDefault()}
                   className={`text-sm font-rubik tracking-wider transition-all duration-300 relative group whitespace-nowrap flex items-center gap-1
                     ${pathname === item.href 
                       ? "text-white" 
