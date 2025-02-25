@@ -90,7 +90,7 @@ export default function GalleryPage() {
     <main className="min-h-screen bg-white dark:bg-black">
       <Navigation />
       <div className="pt-32">
-        {GALLERY_SECTIONS.map((section, index) => (
+        {GALLERY_SECTIONS.map((section) => (
           <section key={section.title} className="py-24 first:pt-0">
             <div className="max-w-7xl mx-auto px-8">
               {/* Section Header */}
