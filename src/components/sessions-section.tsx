@@ -52,6 +52,18 @@ const SESSIONS = [
     category: "Commercial",
     image: "/sessions/event.jpeg",
     href: "/services/events"
+  },
+  {
+    title: "Personal Branding",
+    category: "Commercial",
+    image: "/sessions/personal.jpeg",
+    href: "/services/personal"
+  },
+  {
+    title: "Fashion & Model",
+    category: "Commercial",
+    image: "/sessions/fashion.jpeg",
+    href: "/services/fashion"
   }
 ]
 
@@ -92,7 +104,7 @@ export default function SessionsSection() {
               >
                 {/* Background Image */}
                 <Image
-                  src={session.image}
+                  src={session.image || ''}
                   alt={session.title}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"

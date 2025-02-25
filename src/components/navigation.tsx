@@ -56,30 +56,31 @@ const NAV_ITEMS = [
     label: "SERVICES",
     submenus: [
       {
-        label: "Wedding",
+        label: "Wedding & Events",
         image: "/gallery/wedding/1.jpeg",
         items: [
-          { label: "Pre-Wedding", href: "/services/pre-wedding" },
-          { label: "Wedding Day", href: "/services/wedding" },
-          { label: "Post-Wedding", href: "/services/post-wedding" },
+          { label: "Wedding Photography", href: "/services/wedding" },
+          { label: "Graduation Photos", href: "/services/graduation" },
+          { label: "Event Coverage", href: "/services/events" },
         ]
       },
       {
-        label: "Portrait",
+        label: "Portrait Sessions",
         image: "/gallery/portrait/1.jpeg",
         items: [
           { label: "Studio Sessions", href: "/services/studio" },
-          { label: "Outdoor Sessions", href: "/services/outdoor" },
+          { label: "Portrait Sessions", href: "/services/portrait" },
           { label: "Family Portrait", href: "/services/family" },
+          { label: "Corporate Portrait", href: "/services/corporate" },
         ]
       },
       {
-        label: "Events",
-        image: "/gallery/events/1.jpeg",
+        label: "Special Shoots",
+        image: "/gallery/birthday/1.jpeg",
         items: [
-          { label: "Corporate Events", href: "/services/corporate" },
-          { label: "Birthday Parties", href: "/services/birthday" },
-          { label: "Graduation", href: "/services/graduation" },
+          { label: "Pre-Birthday Shoot", href: "/services/birthday" },
+          { label: "Personal Branding", href: "/services/personal" },
+          { label: "Fashion & Model", href: "/services/fashion" },
         ]
       }
     ]
