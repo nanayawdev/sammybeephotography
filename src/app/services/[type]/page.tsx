@@ -163,7 +163,7 @@ export default function ServicePage({ params }: { params: { type: string } }) {
 
         {/* Content */}
         <div className="relative min-h-[85vh] max-w-7xl mx-auto px-8">
-          <div className="h-full flex flex-col justify-center pt-24">
+          <div className="absolute bottom-20 left-8 right-8">
             <div className="max-w-3xl">
               <h4 className="text-orange-500 font-medium mb-4">our services.</h4>
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
