@@ -469,17 +469,17 @@ export default function ServicePage({ params }: { params: ServiceParams }) {
                 </div>
                 
                 {/* Content Container */}
-                <div className="p-8 space-y-6">
+                <div className="p-8 space-y-6 bg-black text-white">
                   <div>
-                    <h3 className="text-2xl font-bold mb-2 text-black dark:text-white">
+                    <h3 className="text-2xl font-bold mb-2 text-white">
                       {serviceData.packages.basic.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-400">
+                    <p className="text-gray-300">
                       {serviceData.packages.basic.description}
                     </p>
                   </div>
                   
-                  <ul className="space-y-3 text-gray-600 dark:text-gray-400">
+                  <ul className="space-y-3 text-gray-300">
                     {serviceData.packages.basic.features.map(feature => (
                       <li key={feature} className="flex items-center gap-2">
                         <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
@@ -488,12 +488,12 @@ export default function ServicePage({ params }: { params: ServiceParams }) {
                     ))}
                   </ul>
 
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-800">
+                  <div className="flex items-center justify-between pt-4 border-t border-white/10">
                     <p className="text-3xl font-bold text-orange-500">
                       {serviceData.packages.basic.price}
                     </p>
-                    <button className="bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-lg 
-                      hover:bg-gray-900 dark:hover:bg-gray-100 transition-all duration-300">
+                    <button className="bg-white text-black px-6 py-3 rounded-lg 
+                      hover:bg-gray-200 transition-all duration-300">
                       Book Now
                     </button>
                   </div>
@@ -513,17 +513,17 @@ export default function ServicePage({ params }: { params: ServiceParams }) {
                 </div>
                 
                 {/* Content Container */}
-                <div className="p-8 space-y-6">
+                <div className="p-8 space-y-6 bg-black text-white">
                   <div>
-                    <h3 className="text-2xl font-bold mb-2 text-black dark:text-white">
+                    <h3 className="text-2xl font-bold mb-2 text-white">
                       {serviceData.packages.premium.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-400">
+                    <p className="text-gray-300">
                       {serviceData.packages.premium.description}
                     </p>
                   </div>
                   
-                  <ul className="space-y-3 text-gray-600 dark:text-gray-400">
+                  <ul className="space-y-3 text-gray-300">
                     {serviceData.packages.premium.features.map(feature => (
                       <li key={feature} className="flex items-center gap-2">
                         <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
@@ -532,12 +532,12 @@ export default function ServicePage({ params }: { params: ServiceParams }) {
                     ))}
                   </ul>
 
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-800">
+                  <div className="flex items-center justify-between pt-4 border-t border-white/10">
                     <p className="text-3xl font-bold text-orange-500">
                       {serviceData.packages.premium.price}
                     </p>
-                    <button className="bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-lg 
-                      hover:bg-gray-900 dark:hover:bg-gray-100 transition-all duration-300">
+                    <button className="bg-white text-black px-6 py-3 rounded-lg 
+                      hover:bg-gray-200 transition-all duration-300">
                       Book Now
                     </button>
                   </div>
