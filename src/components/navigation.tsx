@@ -3,10 +3,24 @@
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
+import { ChevronDown } from "lucide-react"
 
 const NAV_ITEMS = [
   { label: "HOME", href: "/" },
-  { label: "RATECARD", href: "/ratecard" },
+  { 
+    label: "RATECARD", 
+    href: "/ratecard",
+    dropdown: [
+      { label: "Wedding Photography", href: "/services/wedding" },
+      { label: "Graduation Photos", href: "/services/graduation" },
+      { label: "Studio Sessions", href: "/services/studio" },
+      { label: "Portrait Sessions", href: "/services/portrait" },
+      { label: "Pre-Birthday Shoot", href: "/services/birthday" },
+      { label: "Family Portrait", href: "/services/family" },
+      { label: "Corporate Portrait", href: "/services/corporate" },
+      { label: "Event Coverage", href: "/services/events" },
+    ]
+  },
   { label: "GALLERY", href: "/gallery" },
   { label: "CLIENTS", href: "/clients" },
   { label: "BOOKING", href: "/booking" },
@@ -14,6 +28,7 @@ const NAV_ITEMS = [
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const pathname = usePathname()
 
   useEffect(() => {
@@ -32,25 +47,40 @@ export default function Navigation() {
         <div className="flex items-center justify-center min-w-max">
           <div className="flex gap-6 md:gap-12 items-center px-4">
             {NAV_ITEMS.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className={`text-sm font-rubik tracking-wider transition-all duration-300 relative group whitespace-nowrap
-                  ${pathname === item.href 
-                    ? "text-white" 
-                    : "text-white/70 hover:text-white"
-                  }
-                `}
+              <div 
+                key={item.label} 
+                className="relative group"
+                onMouseEnter={() => setActiveDropdown(item.label)}
+                onMouseLeave={() => setActiveDropdown(null)}
               >
-                {item.label}
-                {/* Animated underline effect */}
-                <span className={`absolute -bottom-1 left-0 w-full h-0.5 bg-white transform origin-left transition-transform duration-300 
-                  ${pathname === item.href 
-                    ? "scale-x-100" 
-                    : "scale-x-0 group-hover:scale-x-100"
-                  }
-                `} />
-              </Link>
+                <Link
+                  href={item.href}
+                  className={`text-sm font-rubik tracking-wider transition-all duration-300 relative group whitespace-nowrap flex items-center gap-1
+                    ${pathname === item.href 
+                      ? "text-white" 
+                      : "text-white/70 hover:text-white"
+                    }
+                  `}
+                >
+                  {item.label}
+                  {item.dropdown && <ChevronDown className="w-4 h-4" />}
+                </Link>
+
+                {/* Dropdown Menu */}
+                {item.dropdown && activeDropdown === item.label && (
+                  <div className="absolute top-full left-0 mt-2 w-64 bg-black/90 backdrop-blur-sm rounded-lg overflow-hidden">
+                    {item.dropdown.map((dropdownItem) => (
+                      <Link
+                        key={dropdownItem.href}
+                        href={dropdownItem.href}
+                        className="block px-4 py-3 text-sm text-white/70 hover:text-white hover:bg-white/10 transition-colors"
+                      >
+                        {dropdownItem.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </div>
         </div>
