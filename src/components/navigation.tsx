@@ -6,50 +6,6 @@ import { usePathname } from "next/navigation"
 import { ChevronDown } from "lucide-react"
 import Image from "next/image"
 
-// Import the sessions data
-const SESSIONS = [
-  {
-    title: "Wedding Photography",
-    category: "Commercial",
-    href: "/services/wedding"
-  },
-  {
-    title: "Graduation Photos",
-    category: "Commercial",
-    href: "/services/graduation"
-  },
-  {
-    title: "Studio Sessions",
-    category: "New Build",
-    href: "/services/studio"
-  },
-  {
-    title: "Portrait Sessions",
-    category: "Commercial",
-    href: "/services/portrait"
-  },
-  {
-    title: "Pre-Birthday Shoot",
-    category: "Renovation",
-    href: "/services/birthday"
-  },
-  {
-    title: "Family Portrait",
-    category: "Commercial",
-    href: "/services/family"
-  },
-  {
-    title: "Corporate Portrait",
-    category: "Commercial",
-    href: "/services/corporate"
-  },
-  {
-    title: "Event Coverage",
-    category: "Commercial",
-    href: "/services/events"
-  }
-]
-
 const NAV_ITEMS = [
   { label: "HOME", href: "/" },
   { 
