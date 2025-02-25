@@ -392,7 +392,6 @@ type Props = {
   params: {
     type: string
   }
-  searchParams: { [key: string]: string | string[] | undefined }
 }
 
 // Update metadata generation
@@ -408,7 +407,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 // Update the page component
 export default async function ServicePage({
   params,
-  searchParams,
 }: Props) {
   const serviceData = SERVICES_DATA[params.type as keyof typeof SERVICES_DATA]
 
