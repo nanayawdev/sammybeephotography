@@ -464,7 +464,7 @@ export default function ServicePage({ params }: { params: ServiceParams }) {
                     src={serviceData.packages.basic.image}
                     alt={serviceData.packages.basic.title}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover object-[center_25%] transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
                 
@@ -508,7 +508,7 @@ export default function ServicePage({ params }: { params: ServiceParams }) {
                     src={serviceData.packages.premium.image}
                     alt={serviceData.packages.premium.title}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover object-[center_25%] transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
                 
