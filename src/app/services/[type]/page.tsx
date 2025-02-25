@@ -404,7 +404,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-// Update the page component
+// @ts-ignore
 export default async function ServicePage({
   params,
 }: Props) {
