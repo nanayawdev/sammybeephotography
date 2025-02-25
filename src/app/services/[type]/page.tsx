@@ -441,69 +441,89 @@ export default function ServicePage({ params }: { params: { type: string } }) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {/* Basic Package */}
-              <div className="group relative h-[600px] overflow-hidden rounded-2xl">
-                <Image
-                  src={serviceData.packages.basic.image}
-                  alt={serviceData.packages.basic.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
-                  <div className="absolute bottom-0 left-0 right-0 p-8">
-                    <h3 className="text-2xl font-bold mb-4 text-white">{serviceData.packages.basic.title}</h3>
-                    <p className="text-gray-300 mb-6">
+              <div className="group bg-black/5 dark:bg-white/5 rounded-2xl overflow-hidden">
+                {/* Image Container */}
+                <div className="relative h-[400px] overflow-hidden">
+                  <Image
+                    src={serviceData.packages.basic.image}
+                    alt={serviceData.packages.basic.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                
+                {/* Content Container */}
+                <div className="p-8 space-y-6">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-2 text-black dark:text-white">
+                      {serviceData.packages.basic.title}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400">
                       {serviceData.packages.basic.description}
                     </p>
-                    <ul className="space-y-3 text-gray-300 mb-8">
-                      {serviceData.packages.basic.features.map(feature => (
-                        <li key={feature}>• {feature}</li>
-                      ))}
-                    </ul>
-                    <div className="flex items-center justify-between">
-                      <p className="text-3xl font-bold text-orange-500">
-                        {serviceData.packages.basic.price}
-                      </p>
-                      <button className="bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-lg 
-                        opacity-0 group-hover:opacity-100 transition-all duration-300 
-                        hover:bg-white/20">
-                        Book Now
-                      </button>
-                    </div>
+                  </div>
+                  
+                  <ul className="space-y-3 text-gray-600 dark:text-gray-400">
+                    {serviceData.packages.basic.features.map(feature => (
+                      <li key={feature} className="flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-800">
+                    <p className="text-3xl font-bold text-orange-500">
+                      {serviceData.packages.basic.price}
+                    </p>
+                    <button className="bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-lg 
+                      hover:bg-gray-900 dark:hover:bg-gray-100 transition-all duration-300">
+                      Book Now
+                    </button>
                   </div>
                 </div>
               </div>
 
               {/* Premium Package */}
-              <div className="group relative h-[600px] overflow-hidden rounded-2xl">
-                <Image
-                  src={serviceData.packages.premium.image}
-                  alt={serviceData.packages.premium.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
-                  <div className="absolute bottom-0 left-0 right-0 p-8">
-                    <h3 className="text-2xl font-bold mb-4 text-white">{serviceData.packages.premium.title}</h3>
-                    <p className="text-gray-300 mb-6">
+              <div className="group bg-black/5 dark:bg-white/5 rounded-2xl overflow-hidden">
+                {/* Image Container */}
+                <div className="relative h-[400px] overflow-hidden">
+                  <Image
+                    src={serviceData.packages.premium.image}
+                    alt={serviceData.packages.premium.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                
+                {/* Content Container */}
+                <div className="p-8 space-y-6">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-2 text-black dark:text-white">
+                      {serviceData.packages.premium.title}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400">
                       {serviceData.packages.premium.description}
                     </p>
-                    <ul className="space-y-3 text-gray-300 mb-8">
-                      {serviceData.packages.premium.features.map(feature => (
-                        <li key={feature}>• {feature}</li>
-                      ))}
-                    </ul>
-                    <div className="flex items-center justify-between">
-                      <p className="text-3xl font-bold text-orange-500">
-                        {serviceData.packages.premium.price}
-                      </p>
-                      <button className="bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-lg 
-                        opacity-0 group-hover:opacity-100 transition-all duration-300 
-                        hover:bg-white/20">
-                        Book Now
-                      </button>
-                    </div>
+                  </div>
+                  
+                  <ul className="space-y-3 text-gray-600 dark:text-gray-400">
+                    {serviceData.packages.premium.features.map(feature => (
+                      <li key={feature} className="flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-800">
+                    <p className="text-3xl font-bold text-orange-500">
+                      {serviceData.packages.premium.price}
+                    </p>
+                    <button className="bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-lg 
+                      hover:bg-gray-900 dark:hover:bg-gray-100 transition-all duration-300">
+                      Book Now
+                    </button>
                   </div>
                 </div>
               </div>
