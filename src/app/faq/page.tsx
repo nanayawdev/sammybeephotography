@@ -163,7 +163,7 @@ export default function FAQPage() {
               Still have questions?
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              Can't find what you're looking for? Feel free to reach out to us directly.
+              Can&apos;t find what you&apos;re looking for? Feel free to reach out to us directly.
             </p>
             <button className="bg-black dark:bg-white text-white dark:text-black px-8 py-4 rounded-lg
               hover:bg-gray-900 dark:hover:bg-gray-100 transition-all duration-300">

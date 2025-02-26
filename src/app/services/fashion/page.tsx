@@ -1,6 +1,7 @@
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import Image from "next/image"
+import Link from "next/link"
 import { Metadata } from "next"
 import { SERVICES_DATA } from "@/app/lib/services-data"
 
@@ -41,10 +42,10 @@ export default function FashionPage() {
               <p className="text-xl md:text-2xl text-gray-300">
                 {serviceData.description}
               </p>
-              <button className="mt-8 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg
+              <Link href="/faq" className="inline-block mt-8 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg
                 hover:bg-white/20 transition-all duration-300">
                 Read Our FAQ
-              </button>
+              </Link>
             </div>
           </div>
         </div>
